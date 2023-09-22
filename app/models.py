@@ -20,3 +20,13 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.username
+    
+    
+class Content(db.Model):
+    __tablename__ = 'content'
+    id = db.Column(db.Integer, primary_key=True)
+    contentDialog = db.Column(db.String(128), unique=True, index=True)
+    # user_id = db.Column(db.Integer, db.ForeignKey('users.id')) // 绑定用户和对话内容
+
+    def __repr__(self):
+        return '<contentDialog %r>' % self.contentDialog

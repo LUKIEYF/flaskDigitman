@@ -1,9 +1,9 @@
 #-*- coding=utf-8 -*-
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
+from wtforms import TextAreaField, SubmitField
 from wtforms.validators import DataRequired
 
 
-class NameForm(FlaskForm):
-    name = StringField('What is your name?', validators=[DataRequired()])
+class DialogForm(FlaskForm):
+    dialog = TextAreaField('', validators=[DataRequired()], render_kw={"rows": 3})
     submit = SubmitField('Submit')
